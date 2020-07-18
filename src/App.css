@@ -93,7 +93,7 @@ img {
   width: 10%;
 }
 
-#red-queen_and_alice {
+ #red-queen_and_alice {
   position: absolute;
   top: 0;
   left: 50%;
@@ -115,7 +115,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-}
+} 
 
 .sky,
 .earth {
