@@ -9,9 +9,11 @@ import plant3 from './images/plant3.png'
 
 function App() {
 
-  const aliceSprite = useRef(null);
-  const foreground = useRef(null);
-  const background = useRef(null);
+  const background1 = useRef(null);
+  const background2 = useRef(null);
+  const foreground1 = useRef(null);
+  const foreground2 = useRef(null);
+  const redQueen_alice_sprite = useRef(null);
 
   useLayoutEffect(() => {
 
@@ -31,24 +33,20 @@ function App() {
       iterations: Infinity
     };
 
-    let background1 = document.getElementById('background1');
-    let background2 = document.getElementById('background2');
 
-    let background1Movement = background1.animate(
+    let background1Movement = background1.current.animate(
       sceneryFrames, sceneryTimingBackground);
     background1Movement.currentTime = background1Movement.playbackRate / 2;
 
-    let background2Movement = background2.animate(
+    let background2Movement = background2.current.animate(
       sceneryFrames, sceneryTimingBackground);
 
-    let foreground1 = document.getElementById('foreground1');
-    let foreground2 = document.getElementById('foreground2');
 
-    let foreground1Movement = foreground1.animate(
+    let foreground1Movement = foreground1.current.animate(
       sceneryFrames, sceneryTimingForeground);
     foreground1Movement.currentTime = foreground1Movement.playbackRate / 2;
 
-    let foreground2Movement = foreground2.animate(
+    let foreground2Movement = foreground2.current.animate(
       sceneryFrames, sceneryTimingForeground);
 
 
@@ -57,9 +55,8 @@ function App() {
       { transform: 'translateY(-100%)' }
     ];
 
-    let redQueen_alice_sprite = document.getElementById('red-queen_and_alice_sprite');
 
-    let redQueen_alice = redQueen_alice_sprite.animate(
+    let redQueen_alice = redQueen_alice_sprite.current.animate(
       spriteFrames, {
       easing: 'steps(7, end)',
       direction: "reverse",
@@ -124,23 +121,24 @@ function App() {
       <div className="earth">
         <div id="red-queen_and_alice">
           <img id="red-queen_and_alice_sprite"
+            ref={redQueen_alice_sprite} 
             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/sprite_running-alice-queen_small.png"
             alt="Alice and the Red Queen running to stay in place." />
         </div>
       </div>
-      <div className="scenery" id="foreground1">
+      <div className="scenery" id="foreground1" ref={foreground1}>
         <img id="palm3" src={palm3} alt=" " />
       </div>
-      <div className="scenery" id="foreground2">
+      <div className="scenery" id="foreground2"  ref={foreground2}>
         <img id="bush" src={bush} alt=" " />
         <img id="w_rook_upright" src={plant} alt=" " />
       </div>
-      <div className="scenery" id="background1">
+      <div className="scenery" id="background1"  ref={background1}>
         <img id="r_pawn_upright" src={bush} alt=" " />
         <img id="w_rook" src={plant2} alt=" " />
         <img id="palm1" src={palm2} alt=" " />
       </div>
-      <div className="scenery" id="background2">
+      <div className="scenery" id="background2"  ref={background2}>
         <img id="r_pawn" src={palm2} alt=" " />
         <img id="r_knight" src={plant3} alt=" " />
         <img id="palm2" src={palm2} alt=" " />
