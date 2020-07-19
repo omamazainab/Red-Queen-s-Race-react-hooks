@@ -115,7 +115,7 @@ function App() {
       <div className="sky">
         <div id="sun"><iframe
           src="https://giphy.com/embed/L08sJsg6tEUyb1E0VW" width="10%" height="100%"
-          frameBorder="0" className="giphy-embed-sun" allowFullScreen></iframe>
+          frameBorder="0" className="giphy-embed-sun" allowFullScreen title="sun"></iframe>
         </div>
       </div>
       <div className="earth">
