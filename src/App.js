@@ -66,8 +66,8 @@ function App() {
     });
 
     /* Alice tires so easily! 
-  Every so many seconds, reduce their playback rate so they slow a little. 
-*/
+      Every so many seconds, reduce their playback rate so they slow a little. 
+    */
     let sceneries = [foreground1Movement, foreground2Movement, background1Movement, background2Movement];
 
     let adjustBackgroundPlayback = function () {
